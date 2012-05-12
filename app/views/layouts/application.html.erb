@@ -8,7 +8,16 @@
 </head>
 <body>
 
-<%= yield %>
+<% if flash[:notice] %>
+  <p style="background-color: #cfc">
+    <%= flash[:notice] %>
+  </p>
+<% end %>
 
+<%= yield %>
+ 
+<% if session[:current_user_id] != nil %>
+<%= link_to "Logout", logout_path %>
+<% end %>
 </body>
 </html>

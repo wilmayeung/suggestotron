@@ -1,4 +1,11 @@
 Suggestotron::Application.routes.draw do
+  root :to => "users#index"
+
+  resources :users
+  resources :logins, :only => [:new, :create, :destroy]
+
+  match 'logout/' => 'logins#destroy'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

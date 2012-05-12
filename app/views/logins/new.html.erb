@@ -1,0 +1,14 @@
+<h1>Login Page</h1>
+<%# Comment line %>
+<% if flash[:alert] %>
+  <p style="background-color: #fcc">
+    <%= flash[:alert] %>
+  </p>
+<% end %>
+  <%= form_tag logins_path do %>
+  <%= label_tag :username %>
+  <%= text_field_tag :username %>
+  <%= label_tag :password %>
+  <%= text_field_tag :password %>
+  <%= submit_tag 'submit' %>
+<% end %>
